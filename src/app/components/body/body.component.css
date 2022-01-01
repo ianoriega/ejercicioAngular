@@ -1,0 +1,99 @@
+.datosVisita{
+    margin-top: 5%;
+}
+
+#cuerpoDatos{
+    margin-top: 2%;
+    width: 100%;
+    height: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ladoIzq{
+    width: 50%;
+    float: left;
+    margin-left: 1.6%;
+}
+
+#ladoDer{
+    float: left;
+}
+
+.datosTitulo{
+    font-size: 1vw;
+    font-weight:500;
+}
+
+.txtBox{
+    margin-top: 1%;
+    height: 1.3vw;
+    width: 14vw;
+}
+
+.btn{
+    font-size: larger;
+    background-color: rgb(255, 241, 43); 
+}
+
+#btnConsultar{
+    margin-left: 5%;
+}
+
+#btnIngresar{
+    margin-top: 2%;
+    margin-right: 1%;
+    float:right;
+}
+
+#lblFIngreso{
+    margin-left: 15%;
+}
+
+#lblFecha{
+    margin-left: 5%;
+    font-size: 0.8vw;
+    font-weight:400;
+}
+
+.selects{
+    margin-top: 1%;
+    height: 1.6vw;
+    width: 30vw;
+    font-size: 0.8vw;
+}
+
+input::placeholder {
+    font-size: 0.8vw;
+}
+
+#lblNombre{
+  
+    font-size: 0.8vw;
+    font-weight:400;
+}
+
+.table{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+}
+
+.columna{
+    width: 25%;
+}
+
+.titulo{
+    font-weight: 500;  
+}
+
+#fila{
+    border-top: black;
+    
+}
+
+#paginator{
+    float:right;
+}
+
