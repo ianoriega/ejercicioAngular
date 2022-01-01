@@ -1,0 +1,63 @@
+<mat-card class="datosVisita">
+    <div class="mat-display-1">Datos de la visita</div>
+</mat-card>
+<div id="cuerpoDatos">
+
+    <div id="ladoIzq">       
+        <label class="datosTitulo">DNI</label><br>
+        <input type="text" class="txtBox" id="txtDni">
+        <button mat-stroked-button id="btnConsultar" class="btn" (click)="getPersona()">Consultar</button><br><br><br>
+        <label class="datosTitulo">Nro. de tarjeta de ingreso</label>
+        <label class="datosTitulo" id="lblFIngreso">Fecha de ingreso</label><br>
+        <input type="text" class="txtBox" id="txtTarIngreso" placeholder=" Ingrese numero">
+        <label id="lblFecha">{{FechaActual}}</label><br><br><br>
+        <label class="datosTitulo">Sector</label><br>
+        <select  id="selectSector" class="selects" (change)="extraerIntegrantes()">
+            <option disabled selected>Seleccione sector de la persona visitada</option>
+            <option value=" " *ngFor="let Sector of Sectores" >
+                {{Sector.sector}}
+            </option>
+        </select>
+    </div>
+    <div id="ladoDer">
+        <label class="datosTitulo">Nombre y apellido</label><br><br>
+        <label id="lblNombre">{{NombreApellido}}</label><br><br><br>
+        <label class="datosTitulo">Hora de ingreso</label><br><br>
+        <label id="lblNombre">{{HoraActual}}</label><br><br><br>
+        <label class="datosTitulo">Visita a</label><br>
+        <select id="selectVisita" class="selects">
+            <option disabled selected>Seleccione a la persona visitada</option>
+            <option  value=" " *ngFor="let persona of IntegrantesSector">
+                    {{persona}}
+            </option>
+        </select>
+    </div>
+    <button mat-stroked-button id="btnIngresar" class="btn" (click)="IngresarVisita()">Ingresar</button>
+</div>
+<mat-card class="historialVisita">
+    <div class="mat-display-1">Historial de la visita</div>
+</mat-card>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <td class="titulo">#</td>
+            <td class="titulo">Fecha</td>
+            <td class="titulo">Hora de ingreso</td>
+            <td class="titulo">Visitó a</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="fila" *ngFor="let visita of visitas | paginate: { itemsPerPage: 10, currentPage: pageChange}; index as i " >
+            <td class="columna">{{i+1}}</td>
+            <td class="columna">{{visita.fecha}}</td>
+            <td class="columna">{{visita.hora}}</td>
+            <td class="columna">{{visita.visitado}}</td>
+        </tr>
+
+    </tbody>
+</table> 
+<div id="paginator">
+    <pagination-controls (pageChange)="pageChange = $event"></pagination-controls>
+</div>
